@@ -44,4 +44,25 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+
+    current_value = self.head
+    next_value = None
+    previous_value = None
+
+    # If the list is empty, return None
+    if current_value is None:
+      return None
+
+    # Else, if the current value is aviable
+    else:
+      while current_value is not None:
+        # Set a link that connects it to the next node and another that points to the previous node
+        # Swap the values in-order to reverse them 
+        next_value = current_value.next_node
+        current_value.next_node = previous_value
+        previous_value = current_value
+        current_value = next_value
+        self.head = previous_value
+
+
+    
